@@ -4,6 +4,7 @@ resource "genesyscloud_routing_queue" "Collections" {
   enable_audio_monitoring          = false
   media_settings_callback {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
@@ -12,6 +13,7 @@ resource "genesyscloud_routing_queue" "Collections" {
   }
   media_settings_email {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 86400000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 300
@@ -49,6 +51,7 @@ resource "genesyscloud_routing_queue" "Collections" {
     }
     alerting_timeout_sec     = 30
     enable_auto_answer       = false
+    enable_auto_dial_and_end = false
   }
   name = "Collections"
   members {
@@ -77,6 +80,7 @@ resource "genesyscloud_routing_queue" "Collections" {
   acw_wrapup_prompt        = "MANDATORY_TIMEOUT"
   media_settings_call {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 8
@@ -84,6 +88,7 @@ resource "genesyscloud_routing_queue" "Collections" {
   media_settings_chat {
     alerting_timeout_sec      = 30
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
   }
@@ -147,12 +152,14 @@ resource "genesyscloud_routing_queue" "Customer_Service" {
   media_settings_chat {
     alerting_timeout_sec      = 30
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
   }
   media_settings_message {
     alerting_timeout_sec      = 30
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
   }
@@ -165,6 +172,7 @@ resource "genesyscloud_routing_queue" "Customer_Service" {
   enable_transcription = false
   media_settings_callback {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
@@ -174,6 +182,7 @@ resource "genesyscloud_routing_queue" "Customer_Service" {
   acw_timeout_ms = 120000
   media_settings_email {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 86400000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 300
@@ -182,6 +191,7 @@ resource "genesyscloud_routing_queue" "Customer_Service" {
   enable_manual_assignment = false
   media_settings_call {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 8
@@ -197,6 +207,7 @@ resource "genesyscloud_routing_queue" "For_NFN" {
   groups                  = ["0795e040-294d-4d88-92c3-a5c30fe9e01d"]
   media_settings_chat {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
@@ -204,6 +215,7 @@ resource "genesyscloud_routing_queue" "For_NFN" {
   media_settings_email {
     alerting_timeout_sec      = 300
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 86400000
     service_level_percentage  = 0.8
   }
@@ -211,6 +223,7 @@ resource "genesyscloud_routing_queue" "For_NFN" {
   wrapup_codes      = ["211efe58-0710-4427-9ab0-8f48daa1830b", "53f28685-6770-431c-a4ef-4af031a217e1", "a6d910c6-ba68-4b0a-a400-c8a08ea2a1ed", "a8aa7283-b57a-4501-a99f-4046f346b4dc"]
   media_settings_message {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     sub_type_settings {
@@ -259,6 +272,7 @@ resource "genesyscloud_routing_queue" "For_NFN" {
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 8
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
   }
   members {
     ring_num = 1
@@ -286,11 +300,13 @@ resource "genesyscloud_routing_queue" "For_NFN" {
     auto_dial_delay_seconds   = 300
     auto_end_delay_seconds    = 300
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
   }
 }
 
 resource "genesyscloud_routing_queue" "NF" {
   media_settings_email {
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 86400000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 300
@@ -299,6 +315,7 @@ resource "genesyscloud_routing_queue" "NF" {
   enable_transcription = false
   media_settings_message {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
@@ -314,6 +331,7 @@ resource "genesyscloud_routing_queue" "NF" {
   division_id      = "32b83326-f417-41fc-8474-f5e59d228f16"
   media_settings_chat {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
@@ -327,9 +345,11 @@ resource "genesyscloud_routing_queue" "NF" {
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 8
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
   }
   media_settings_callback {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
@@ -341,6 +361,7 @@ resource "genesyscloud_routing_queue" "NF" {
 resource "genesyscloud_routing_queue" "Sales_Queue" {
   media_settings_call {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 8
@@ -353,12 +374,14 @@ resource "genesyscloud_routing_queue" "Sales_Queue" {
   media_settings_chat {
     alerting_timeout_sec      = 30
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
   }
   media_settings_email {
     alerting_timeout_sec      = 300
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 86400000
     service_level_percentage  = 0.8
   }
@@ -372,6 +395,7 @@ resource "genesyscloud_routing_queue" "Sales_Queue" {
     auto_dial_delay_seconds   = 300
     auto_end_delay_seconds    = 300
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
   }
   name                    = "Sales Queue"
   enable_audio_monitoring = false
@@ -379,6 +403,7 @@ resource "genesyscloud_routing_queue" "Sales_Queue" {
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
   }
 }
@@ -389,6 +414,7 @@ resource "genesyscloud_routing_queue" "Vadala" {
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 300
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 86400000
   }
   scoring_method   = "TimestampAndPriority"
@@ -399,6 +425,7 @@ resource "genesyscloud_routing_queue" "Vadala" {
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
   }
   skill_evaluation_method = "ALL"
   enable_audio_monitoring = false
@@ -406,6 +433,7 @@ resource "genesyscloud_routing_queue" "Vadala" {
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 8
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
   }
   media_settings_callback {
@@ -413,6 +441,7 @@ resource "genesyscloud_routing_queue" "Vadala" {
     auto_dial_delay_seconds   = 300
     auto_end_delay_seconds    = 300
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
   }
@@ -422,6 +451,7 @@ resource "genesyscloud_routing_queue" "Vadala" {
   enable_transcription     = false
   media_settings_message {
     enable_auto_answer        = false
+    enable_auto_dial_and_end  = false
     service_level_duration_ms = 20000
     service_level_percentage  = 0.8
     alerting_timeout_sec      = 30
